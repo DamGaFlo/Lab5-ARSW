@@ -1,3 +1,4 @@
+var apiType = apiclient;
 var services  = (function(){
     function points(blueprint){
         return blueprint.reduce(function(total,num){
@@ -38,10 +39,10 @@ var services  = (function(){
     function start(){
         var authorSearch = $("#nameValue").val();
         $("#authorLabel").text(authorSearch+"'s blueprints:");
-        apimock.getBlueprintsByAuthor(authorSearch, blueprintsTable)
+        apiType.getBlueprintsByAuthor(authorSearch, blueprintsTable)
     }
     function searchAuthorByName(name,author) {
-        apimock.getBlueprintsByNameAndAuthor(name,author,draw)
+        apiType.getBlueprintsByNameAndAuthor(name,author,draw)
     }
 
     return {
